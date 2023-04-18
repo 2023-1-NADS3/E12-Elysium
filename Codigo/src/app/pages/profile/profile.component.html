@@ -1,0 +1,40 @@
+<section class="featured-games-section" style="background-image:url(assets/e.png);">
+
+</section>
+<div class="container-fluid">
+
+    <div class=per *ngIf="currentUser; else loggedOut">
+        <img src="assets\perfil.jpg" alt="..." class="img-thumbnail rounded mx-auto d-block">
+        <div class="row">
+            <h1 class="text-center">{{ currentUser.username }}</h1>
+            <h1 class="text-center">{{ currentUser.email }}</h1>
+        </div>
+        <button type="button" class="btn btn-info mx-auto d-block">Edit</button>
+    </div>
+</div>
+
+<div class="card w-100 shadow-xss mx-auto d-block rounded-xxl border-0  pe-4 pt-4 ps-4 pb-3 mb-3 mt-3">
+    <div class="card-body p-0">
+        <a href="#"
+            class=" font-xssss fw-600 text-grey-500 	text-decoration-none card-body p-0 d-flex align-items-center"><svg
+                xmlns="http://www.w3.org/2000/svg" width="26" height="18" color="#3da3bd" fill="currentColor"
+                class="bi bi-pencil-square" viewBox="0 0 16 16">
+                <path
+                    d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                <path fill-rule="evenodd"
+                    d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+            </svg> <button type="button" class="btn btn-outline-info btn-sm">Create Post</button></a>
+    </div>
+    <div class="card-body p-0 mt-3 position-relative">
+        <!--<figure class="avatar position-absolute p-1 me-2 mt-1 top-5"><img src="perfil.jpg" width=40; alt="image"
+                class="shadow-sm rounded-circle w30"></figure>-->
+        <textarea name="message"
+            class="h100 bor-0 w-100 rounded-xxl p-2 pe-5 font-xssss text-grey-500 fw-500 border-light-md theme-dark-bg"
+            cols="60" rows="10" placeholder="What's on your mind?"></textarea>
+    </div>
+</div>
+
+
+<ng-template #loggedOut>
+    Porfavor faça um login
+</ng-template>

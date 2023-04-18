@@ -1,0 +1,100 @@
+.nav_change {
+  position: fixed;
+  background: #0d0e1b;
+  width: 100%;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  transition: all 0.4s ease-in-out;
+}
+
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(	0, 185, 205)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.custom-toggler.navbar-toggler {
+  border-color: transparent;
+}
+.navbar-toggler {
+  color: rgb(0, 185, 205);
+}
+
+.navbar-brand img {
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: 3%;
+}
+P {
+  position: absolute;
+  left: 12%;
+  top: 35%;
+  color: aqua;
+}
+
+.navbar {
+  z-index: 6;
+  height: 12%;
+}
+.offcanvas {
+  background-color: #0d0e1b;
+  width: 80%;
+}
+h5 {
+  position: relative;
+  font-family: "Oswald", sans-serif;
+  text-decoration: none;
+  font-size: 30px;
+  cursor: pointer;
+  text-align: center;
+  color: #00b9cd;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+a,
+img,
+span,
+ion-icon {
+  display: block;
+}
+
+.nav-link {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 40px;
+  margin-bottom: 20px;
+}
+
+.nav-link {
+  color: hsl(0, 4%, 91%);
+  font-family: "Oswald", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.15s ease-in-out;
+}
+
+.nav-link:is(:hover, :focus) {
+  color: hsl(186, 100%, 40%);
+}
+
+.offcanvas-title img {
+  margin-top: 20px;
+}
+img {
+  display: block;
+  margin-right: 80px;
+}
