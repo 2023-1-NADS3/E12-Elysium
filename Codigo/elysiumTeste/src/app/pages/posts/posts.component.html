@@ -1,0 +1,32 @@
+<section class="vh-100" style="background-color: #0d0e1b;">
+<br><br><br><br>    
+<div class="list row">
+    <div class="col-md-8">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Procure" [(ngModel)]="title" />
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" (click)="searchPost()">
+                    Pesquisar
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <h4>Postagens</h4>
+        <a href="/create">Faça um post</a>
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let post of post; let i = index" [class.active]="i == currentIndex"
+(click)="setActivePost(post, i)" >
+                <h3><a href="view/?id={{post.id}}">{{ post.title }}</a></h3>
+                <p>{{ post.desc }}</p>
+                <button type="button" (click)="updateLike()">Likes:{{ post.likes}}</button>
+            
+            </li>
+            
+        </ul>
+    </div>
+
+</div>
+    
+</section>
+

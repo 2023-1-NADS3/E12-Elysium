@@ -1,0 +1,325 @@
+<body>
+
+  <header>
+
+      <!-- This div is  intentionally blank. It creates the transparent black overlay over the video which you can modify in the CSS -->
+      <div class="overlay"></div>
+
+      <!-- The HTML5 video element that will create the background video on the header -->
+      <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+        <source src="assets\video.mp4" type="video/mp4">
+      </video>
+
+      <!-- The header content -->
+      <div class="container h-100">
+        <div class="d-flex h-100 text-center align-items-center">
+          <div class="w-100 text-white">
+            <h2 class="display-3"><span>ELYSIUM</span></h2>
+            <p class="lead mb-0">Lorem ipsum dolor sit..</p>
+            <button  type="button" style="color:  rgb(0, 185, 205);"class="btn btn-outline-info" *ngIf="!isLoggedIn"routerLink="login">Login</button >
+            <button type="button" style="color:  rgb(0, 185, 205);" class="btn btn-outline-info" *ngIf="isLoggedIn" routerLink="profile">Profile</button>
+            </div>
+        </div>
+      </div>
+    </header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <section class="upcoming_matches_section">
+          <div class="container">
+              <div class="row aos-init aos-animate" data-aos="fade-up">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <h2>
+                        Próximas partidas</h2>
+                      <figure class="mb-5">
+                          <img src="assets\tr.png"[width]="60" height="60"  alt="logo">
+                      </figure>
+                  </div>
+              </div>
+              <div class="row aos-init aos-animate" data-aos="fade-up">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-table align-item-center">
+                      <div class="upcoming_matches_content padding_bottom">
+                          <div class="row">
+                              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                  <div class="first_portion">
+                                    <figure class="mb-0">
+                                      <img src="assets\unn.png" alt="" width="80" height="80">
+                                    </figure>
+                                    <div class="vs_wrapper">
+                                        <span>VS</span>
+                                    </div>
+                                    <figure class="mb-0">
+                                      <img src="assets\tlt.png" alt="" width="80" height="80">
+                                    </figure>
+                                  </div>
+                              </div>
+                              <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                  <div class="center_portion">
+                                      <p class="mb-0">Valorant Tournament</p>
+                                      <div class="center_span_wrapper">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-week" viewBox="0 0 16 16">
+                                          <path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"/>
+                                          <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                                        </svg><span class="mr-3">March 29,2023</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                                          <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                                          <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+                                        </svg>
+                                          <span>4:00 Pm</span>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="col-xl-5 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                  <div class="last_portion">
+                                    <div class="last_span_wrapper">
+                                          <span class="players">VCT</span>
+                                      </div>
+                                      <a href="#"><i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-table align-item-center">
+                      <div class="upcoming_matches_content mb-4 padding_bottom">
+                          <div class="row">
+                              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                  <div class="first_portion">
+                                      <figure class="mb-0">
+                                        <img src="assets\g2.png" alt="" width="80" height="80">
+                                      </figure>
+                                      <div class="vs_wrapper">
+                                          <span>VS</span>
+                                      </div>
+                                      <figure class="mb-0">
+                                        <img src="assets\boom.png" alt="" width="80" height="80">
+                                      </figure>
+                                  </div>
+                              </div>
+                              <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                  <div class="center_portion">
+                                      <p class="mb-0">Battlefield-4 Tournament</p>
+                                      <div class="center_span_wrapper">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-week" viewBox="0 0 16 16">
+                                          <path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"/>
+                                          <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                                        </svg><span class="mr-3">March 29,2023</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                                          <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                                          <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+                                        </svg><span>4:00 Pm</span>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="col-xl-5 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                  <div class="last_portion">
+                                    <div class="last_span_wrapper">
+                                      <span class="players">VCT</span>
+                                  </div>
+                                      <a href="#"><i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-table align-item-center">
+                      <div class="upcoming_matches_content mb-4 padding_bottom">
+                          <div class="row">
+                              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                  <div class="first_portion">
+                                      <figure class="mb-0">
+                                        <img src="assets\red.png" alt="" width="70" height="70">
+                                      </figure>
+                                      <div class="vs_wrapper">
+                                          <span>VS</span>
+                                      </div>
+                                      <figure class="mb-0">
+                                        <img src="assets\f.png" alt="" width="70" height="70">
+                                      </figure>
+                                  </div>
+                              </div>
+                              <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                  <div class="center_portion">
+                                      <p class="mb-0">Anthem Tournament</p>
+                                      <div class="center_span_wrapper">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-week" viewBox="0 0 16 16">
+                                          <path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"/>
+                                          <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                                        </svg><span class="mr-3">March 29,2023</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                                          <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                                          <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+                                        </svg><span>4:00 Pm</span>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="col-xl-5 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                  <div class="last_portion">
+                                    <div class="last_span_wrapper">
+                                      <span class="players">VCT</span>
+                                  </div>
+                                      <a href="#"><i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-table align-item-center">
+                      <div class="upcoming_matches_content mb-2 padding_bottom">
+                          <div class="row">
+                              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                  <div class="first_portion">
+
+                                    <figure class="mb-0">
+                                      <img src="assets\keyd.png" alt="" width="70" height="70">
+                                  </figure>
+                                  <div class="vs_wrapper">
+                                      <span>VS</span>
+                                  </div>
+                                  <figure class="mb-0">
+                                      <img src="assets\imperial.png" alt="" width="70" height="70">
+                                  </figure>
+                                  </div>
+                              </div>
+                              <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                  <div class="center_portion">
+                                      <p class="mb-0">Pubg Classic Tournament</p>
+                                      <div class="center_span_wrapper">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-week" viewBox="0 0 16 16">
+                                          <path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"/>
+                                          <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                                        </svg><span class="mr-3">March 29,2023</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                                          <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                                          <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+                                        </svg><span>4:00 Pm</span>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="col-xl-5 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                  <div class="last_portion">
+                                      <div class="last_span_wrapper">
+                                          <span class="players">VCT</span>
+                                      </div>
+                                      <a href="#"><i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="btn_wrapper">
+                  <a class="text-decoration-none viewall_btn">View All</a>
+              </div>
+          </div>
+        </section>
+
+
+
+
+
+
+      <!--Reviews Section-->
+      <section class="featured-games-section">
+          <div class="bottom-pattern-layer"style="background-image: url(assets/pattern-2.png);"></div>
+
+  </section>
+
+<!--Video Section-->
+<section class="video-section">
+  <div class="image-layer" style="background-image: url(assets/video-bg.jpg);"></div>
+
+  <div class="auto-container">
+      <div class="content-box wow zoomInStable" data-wow-delay="0ms" data-wow-duration="2500ms">
+          <div class="link-box">
+              <a href="https://www.youtube.com/watch?v=ticp6ScuyLY" class="lightbox-image"><span class="icon fa fa-play"></span></a>
+          </div>
+          <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
+      </div>
+  </div>
+</section>
+
+<!--Featured Games Section-->
+<section class="featured-games-section">
+  <div class="top-pattern-layer" style="background-image: url(assets/pattern-1.png);"></div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- News Section -->
+<section class="news-section">
+  <div class="auto-container">
+    <!-- Sec Title -->
+    <div class="sec-title centered">
+      <div class="title">Recent Articles</div>
+      <h2>Latest Posts</h2>
+    </div>
+
+    <div class="row clearfix">
+
+      <!-- News Block -->
+      <div class="news-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+        <div class="inner-box hvr-bob">
+          <div class="image">
+            <a href="blog-single.html"><img src="assets\blog_post_1.jpg" alt="" /></a>
+          </div>
+          <div class="lower-content">
+            <div class="post-date">20 may 2019</div>
+            <h3><a href="blog-single.html">important brands have given us their trust</a></h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- News Block -->
+      <div class="news-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
+        <div class="inner-box hvr-bob">
+          <div class="image">
+            <a href="blog-single.html"><img src="assets\blog_post_2.jpg" alt="" /></a>
+          </div>
+          <div class="lower-content">
+            <div class="post-date">18 may 2019</div>
+            <h3><a href="blog-single.html">What happened to esports games this weekend</a></h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- News Block -->
+      <div class="news-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
+        <div class="inner-box hvr-bob">
+          <div class="image">
+            <a href="blog-single.html"><img src="assets\blog_post_3.jpg" alt="" /></a>
+          </div>
+          <div class="lower-content">
+            <div class="post-date">16 may 2019</div>
+            <h3><a href="blog-single.html">Lion king vs wolf smart upcoming matches</a></h3>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<!-- End News Section -->
+</body>
