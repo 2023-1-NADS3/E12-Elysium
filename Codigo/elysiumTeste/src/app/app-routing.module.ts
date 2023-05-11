@@ -8,6 +8,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { MakePostsComponent } from './pages/make-posts/make-posts.component'
 import { PostsComponent } from './pages/posts/posts.component'
 import { ViewPostComponent } from './pages/view-post/view-post.component';
+import { FaqComponent } from './pages/faq/faq.component';
 
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'news', component: NewsComponent },
+  { path: 'faq', component: FaqComponent },
   { path: 'times', component: TimesComponent },
   { path: 'login', component: LoginComponent },
   { path: 'cadastro', component: CadastroComponent },

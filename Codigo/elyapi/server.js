@@ -21,21 +21,20 @@ app.use(
 );
 
 require('dotenv').config()
-const mysql = require('mysql2')
-const connection = mysql.createConnection(process.env.DATABASE_URL)
-console.log('Connected to PlanetScale!')
-connection.end()
+// const mysql = require('mysql2')
+// const connection = mysql.createConnection(process.env.DATABASE_URL)
+// console.log('Connected to PlanetScale!')
+// connection.end()
 
 //db
 const db = require("./models");
 //const Role = db.role;
 
 //db.sequelize.sync();
-//force: true vai dropa a tabela
-// db.sequelize.sync({force: true}).then(() => {
-// console.log('Dropa e resencroniza o db');
-// initial();
-// });
+//force: true vai dropa a tabela {force: true}
+db.sequelize.sync().then(() => {
+console.log('resencroniza o db');
+});
 
 // rota pra ver se ta rodando
 app.get("/", (req, res) => {
@@ -43,6 +42,7 @@ app.get("/", (req, res) => {
 });
 
 // rotas
+require('./routes/coments.route')(app);
 require('./routes/post.route')(app);
 require('./routes/user.route')(app);
 require('./routes/auth.routes')(app);

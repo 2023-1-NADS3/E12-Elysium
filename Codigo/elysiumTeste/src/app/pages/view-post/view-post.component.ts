@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Post } from 'src/app/_models/Post';
 import { PostService } from 'src/app/_services/post.service';
+import { Coments } from 'src/app/_models/Coments';
+import { ComentsService } from 'src/app/_services/coments.service';
 
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get('id');
@@ -12,17 +14,29 @@ const id = urlParams.get('id');
 })
 export class ViewPostComponent implements OnInit{
 
+
   currentPost: Post = {
     title: '',
-    desc: '',
     content: '',
-    likes: 0
+    likes: 0,
   }
 
-  constructor(private postService: PostService) { }
+  coments: Coments = {
+    coment: '',
+    likes: 0,
+  }
+
+  like = 1
+    
+  constructor(private postService: PostService,
+              private comentService: ComentsService,) { }
   
   ngOnInit(): void {
       this.getPost(id);
+  }
+
+  retriveComents(): void{
+    
   }
 
   getPost(id: any): void{
@@ -35,4 +49,43 @@ export class ViewPostComponent implements OnInit{
     })
   }
 
+  likePost(): void{
+    const data = {
+      likes: this.currentPost.likes
+    }
+    this.postService.update(this.currentPost.id, data).subscribe({
+      next: (res) => {
+        console.log(res)
+        this.currentPost.likes = this.like++
+      },
+       error: (e) => console.error(e)
+    })
+
+  }
+
+  deletePost() { }
+  
+  updatePost() { }
+
+  
+
+  saveComent(): void{
+    const data = {
+      coment: this.coments.coment
+    }
+
+    this.comentService.createComent(data).subscribe({
+      next: (res) => { 
+        console.log(res)
+      },
+      error: (e) => console.error(e)
+    })
+
+   }
+
+  updateComent() { }
+
+  deleteComent() { }
+
+  likeComent(){ }
 }

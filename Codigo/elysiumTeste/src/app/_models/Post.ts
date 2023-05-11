@@ -5,5 +5,6 @@ export class Post {
     desc?: string
     content?: string
     likes?: number
+    createdAt?: string
 }
 
