@@ -1,7 +1,5 @@
 const db = require("../models");
 const User = db.user;
-
-const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 
 exports.signup = async (req, res) => {
@@ -62,14 +60,8 @@ exports.signout = async (req, res) => {
   }
 };
 
-//fazer post tenta
-exports.makepost = async(req, res) => {
-  const { title, content } = req.body;
-  try {
-    const post = await Post.create({ title, content});
-    res.json(post);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ message: 'Internal server error' });
-  }
-};
+
+exports.findUsers = async (req, res) => {
+  const users = await User.findAll()
+  res.send(users)
+}

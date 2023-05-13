@@ -12,6 +12,8 @@ export class MakePostsComponent implements OnInit {
     title: '',
     desc: '',
     content: '',
+    likes: 0,
+    user_id: '',
   }
   submitted = false
 
@@ -41,6 +43,7 @@ export class MakePostsComponent implements OnInit {
       title: '',
       desc: '',
       content: '',
+      likes: 0,
      }
   }
 

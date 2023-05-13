@@ -1,6 +1,7 @@
 const db = require('../models');
 const Coments = db.coments;
 const Op = db.Sequelize.Op;
+const Post = db.posts
 
 exports.create = (req, res) => {
   if (!req.body.coment) {
@@ -11,7 +12,9 @@ exports.create = (req, res) => {
   }
 
   const coments = {
-      coment: req.body.coment
+    coment: req.body.coment,
+    user_id: req.body.user_id,
+    post_id: req.body.post_id,
   };
 
   Coments.create(coments)
@@ -26,9 +29,10 @@ exports.create = (req, res) => {
     });
 };
 
+//muda isso para achar todos os comentarios que tem o mesmo id do post
 exports.findAll = (req, res) => {
-  const coment = req.query.coment;
-  var condition = coment ? { coment: { [Op.like]: `%${coment}%` } } : null;
+  const postId = req.query.post_id;
+  var condition = postId ? { postId: postId } : null;
 
   Coments.findAll({ where: condition })
     .then(data => {

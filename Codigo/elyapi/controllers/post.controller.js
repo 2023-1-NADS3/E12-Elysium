@@ -15,6 +15,7 @@ exports.create = (req, res) => {
     title: req.body.title,
     desc: req.body.desc,
     content: req.body.content,
+    user_id: req.body.user_id,
   };
 
   Posts.create(post)

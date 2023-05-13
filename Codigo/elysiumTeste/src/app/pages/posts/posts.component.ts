@@ -10,11 +10,13 @@ import { PostService } from 'src/app/_services/post.service';
 export class PostsComponent {
 
   post?: Post[]
-  currentPost: Post = {}
+  currentPost: Post = {
+    likes:0
+  }
   currentIndex = -1
-  
+  like = 1
   title = ''
-  likes = 1
+
 
   constructor(private postService: PostService) { }
   
@@ -34,21 +36,23 @@ export class PostsComponent {
 
   refreshList(): void{
     this.retrivePosts()
-    this.currentPost = {}
+    this.currentPost = {
+         likes:0
+    }
     this.currentIndex = -1
   }
 
-    updateLike(): void{
+  updateLike(): void{
+
       const data = {
-      likes: this.currentPost.likes
+      likes: this.currentPost.likes,
       
-    }
-
-
-    this.postService.update(this.currentPost.id, data).subscribe({
+      }
+    
+    this.postService.update(this.currentPost.id,  data).subscribe({
       next: (res) => {
         console.log(res)
-        this.currentPost.likes = this.likes ++
+        this.currentPost.likes++
       },
        error: (e) => console.error(e)
     })
@@ -61,7 +65,9 @@ export class PostsComponent {
   }
 
   searchPost(): void{
-    this.currentPost = {}
+    this.currentPost = {
+         likes:0
+    }
     this.currentIndex = -1
 
     this.postService.findByTitle(this.title).subscribe({

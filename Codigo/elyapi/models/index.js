@@ -30,6 +30,25 @@ db.role = require("../models/role.model")(sequelize, Sequelize)//
 db.posts = require("../models/posts.model")(sequelize, Sequelize)
 db.coments = require("../models/coments.model")(sequelize, Sequelize)
 
+db.user.hasMany(db.posts, {
+  constraint: true,
+  foreignKey: 'user_id',
+  
+})
+db.user.hasMany(db.coments, {
+  constraint: true,
+  foreignKey: 'user_id',
+})
+
+db.posts.hasMany(db.coments, {
+  constraint: true,
+  foreignKey: 'post_id',
+})
+
+db.posts.belongsTo(db.user)
+db.coments.belongsTo(db.user)
+db.coments.belongsTo(db.posts)
+
 module.exports = db;
 
 

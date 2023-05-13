@@ -11,6 +11,7 @@ module.exports = (sequilize, Sequelize) => {
         },
         like: {
             type: Sequelize.INTEGER,
+            defaultValue: '0',
         },
     },
         {
