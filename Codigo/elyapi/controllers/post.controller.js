@@ -2,7 +2,6 @@ const db = require('../models');
 const Posts = db.posts;
 const Op = db.Sequelize.Op;
 
-
 exports.create = (req, res) => {
   if (!req.body.title) {
     res.status(400).send({
@@ -15,10 +14,11 @@ exports.create = (req, res) => {
     title: req.body.title,
     desc: req.body.desc,
     content: req.body.content,
-    user_id: req.body.user_id,
-  };
+    userId: req.body.userId
+  }
 
   Posts.create(post)
+    
     .then(data => {
       res.send(data);
     })
@@ -88,10 +88,6 @@ exports.update = (req, res) => {
         message: "Não foi possivel o update do post com id=" + id
       });
     });
-};
-
-//likes 
-exports.updateLikes = (req, res) => {
 };
 
 exports.delete = (req, res) => {
