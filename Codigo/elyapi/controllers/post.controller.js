@@ -3,7 +3,6 @@ const Posts = db.Posts;
 const Users = db.Users
 const Op = db.Sequelize.Op;
 
-
 exports.create = (req, res) => {
   if (!req.body.title) {
     res.status(400).send({

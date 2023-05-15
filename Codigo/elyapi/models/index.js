@@ -45,7 +45,6 @@ db.Coments.belongsToMany(db.Users,
     {through: 'CreatorsComents'}
 )
 
-
 module.exports = db;
 
 
