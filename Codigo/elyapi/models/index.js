@@ -1,4 +1,3 @@
-require('dotenv').config();
 const { Sequelize } = require('sequelize');
 
 //conexão sqlite
@@ -7,17 +6,6 @@ const sequelize = new Sequelize({
     storage: './database.sqlite'
   })
 
-// conexão mysql
-// const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USERNAME, process.env.DB_PASSWORD, {
-//     host: process.env.DB_HOST,
-//     dialect: 'mysql',
-//     dialectOptions: {
-//         ssl: {
-//             rejectUnauthorized: true,        
-//         }
-//     }
-//  });
-
 sequelize.authenticate();
 
 const db = {}
@@ -25,29 +13,38 @@ const db = {}
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.user = require("../models/User.model")(sequelize, Sequelize)
+db.Users = require("../models/User.model")(sequelize, Sequelize)
 db.role = require("../models/role.model")(sequelize, Sequelize)//
-db.posts = require("../models/posts.model")(sequelize, Sequelize)
-db.coments = require("../models/coments.model")(sequelize, Sequelize)
+db.Posts = require("../models/posts.model")(sequelize, Sequelize)
+db.Coments = require("../models/coments.model")(sequelize, Sequelize)
+db.AwsersPosts = require("../models/AwsersPosts.model")(sequelize, Sequelize)
+db.CreatorsPosts = require("../models/CreatorsPosts.model")(sequelize, Sequelize)
+db.CreatorsComents = require("../models/CreatorsComents.model")(sequelize, Sequelize)
 
-db.user.hasMany(db.posts, {
-  constraint: true,
-  foreignKey: 'user_id',
-  
-})
-db.user.hasMany(db.coments, {
-  constraint: true,
-  foreignKey: 'user_id',
-})
+// associação da tabela usuario e post
+db.Posts.belongsToMany(db.Users,
+  {through: 'CreatorsPosts'}
+)
+db.Users.belongsToMany(db.Posts,
+  {through: 'CreatorsPosts'}
+)
 
-db.posts.hasMany(db.coments, {
-  constraint: true,
-  foreignKey: 'post_id',
-})
+// associação da tabela post e comentario
+db.Posts.belongsToMany(db.Coments,
+    {through: 'AwsersPosts'}
+)
+db.Coments.belongsToMany(db.Posts,
+    {through: 'AwsersPosts'}
+)
 
-db.posts.belongsTo(db.user)
-db.coments.belongsTo(db.user)
-db.coments.belongsTo(db.posts)
+// associação da tabela usuario e comentario
+db.Users.belongsToMany(db.Coments,
+    {through: 'CreatorsComents'}
+)
+db.Coments.belongsToMany(db.Users,
+    {through: 'CreatorsComents'}
+)
+
 
 module.exports = db;
 

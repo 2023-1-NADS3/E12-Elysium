@@ -36,4 +36,3 @@ export class PostService {
     return this.http.get<Post[]>(`${url}?title=${title}`)
   }
 }
-

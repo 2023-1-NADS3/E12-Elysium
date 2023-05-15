@@ -1,5 +1,5 @@
 const db = require("../models");
-const User = db.user;
+const User = db.Users;
 const bcrypt = require("bcryptjs");
 
 exports.signup = async (req, res) => {
@@ -12,7 +12,7 @@ exports.signup = async (req, res) => {
     });
     res.send({ message: "Usuario registrado" })
   } catch (error) {
-    res.status(500).send({ message: error.message });
+    res.status(500).send({ message: error.message});
   }
 };
 

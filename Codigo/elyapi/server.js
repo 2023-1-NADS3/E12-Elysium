@@ -20,17 +20,8 @@ app.use(
   })
 );
 
-require('dotenv').config()
-// const mysql = require('mysql2')
-// const connection = mysql.createConnection(process.env.DATABASE_URL)
-// console.log('Connected to PlanetScale!')
-// connection.end()
-
 //db
 const db = require("./models");
-//const Role = db.role;
-
-//db.sequelize.sync();
 //force: true vai dropa a tabela {force: true}
 db.sequelize.sync().then(() => {
 console.log('resencroniza o db');

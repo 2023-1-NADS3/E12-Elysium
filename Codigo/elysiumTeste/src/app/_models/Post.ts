@@ -6,6 +6,8 @@ export interface Post {
     content?: string
     likes: number
     createdAt?: string
-    user_id?: any
+    UserId?: any
+    Users?: {
+    username?: string
+    };
 }
-

@@ -6,6 +6,7 @@ import { ComentsService } from 'src/app/_services/coments.service';
 
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get('id');
+const index = 0
 
 @Component({
   selector: 'app-view-post',
@@ -14,12 +15,15 @@ const id = urlParams.get('id');
 })
 export class ViewPostComponent implements OnInit{
 
-
+    
   currentPost: Post = {
     title: '',
     content: '',
     likes: 0,
   }
+
+  index = this.currentPost.Users?.username
+
 
   coments: Coments = {
     coment: '',
@@ -29,11 +33,13 @@ export class ViewPostComponent implements OnInit{
   like = 1
     
   constructor(private postService: PostService,
-              private comentService: ComentsService,) { }
+              private comentService: ComentsService,
+              ) { }
   
   ngOnInit(): void {
-      this.getPost(id);
+    this.getPost(id);
   }
+
 
   retriveComents(): void{
     

@@ -1,10 +1,10 @@
 <section class="vh-100" style="background-color: #0d0e1b;">
 <br><br><br>
-<div class="list-group" currentPost>
-<p>Autor: {{currentPost.user_id}}</p>
-<p>Titulo: {{currentPost.title}}</p>
-<p>Conteudo: {{currentPost.content}}</p>
-<p>Likes: {{currentPost.likes}}</p>
+<div class="list-group" *ngIf="currentPost">
+    <p>Autor: {{ currentPost.Users?.username }}</p>
+    <p>Titulo: {{ currentPost.title }}</p>
+    <p>Conteudo: {{ currentPost.content }}</p>
+    <p>Likes: {{ currentPost.likes }}</p>
 
 <button (click)="updatePost()">Editar</button>
 <button (click)="deletePost()">Deletar</button>

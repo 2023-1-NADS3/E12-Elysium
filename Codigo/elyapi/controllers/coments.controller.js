@@ -1,9 +1,10 @@
 const db = require('../models');
-const Coments = db.coments;
+const Coments = db.Coments;
 const Op = db.Sequelize.Op;
-const Post = db.posts
+const Posts = db.Posts
+const Users = db.Users
 
-exports.create = (req, res) => {
+exports.create = async (req, res) => {
   if (!req.body.coment) {
     res.status(400).send({
       message: "O campo de comentario não pode estar vazio!"
@@ -13,28 +14,35 @@ exports.create = (req, res) => {
 
   const coments = {
     coment: req.body.coment,
-    user_id: req.body.user_id,
-    post_id: req.body.post_id,
   };
 
-  Coments.create(coments)
-    .then(data => {
-      res.send(data);
-    })
-    .catch(err => {
-      res.status(500).send({
-        message:
-          err.message || "Erro enquantos os comentarios eram recuperados"
-      });
+  try {
+    const createdComent = await Coments.create(coments);
+    await createdComent.addUsers(req.body.UserId);
+    await createdComent.addPosts(req.body.PostId);
+    res.send({ message: "Comentario criado com sucesso!" });
+  } catch (err) {
+    res.status(500).send({
+      message:
+        err.message || "Erro enquanto os comentarios eram recuperados"
     });
+  }
 };
 
 //muda isso para achar todos os comentarios que tem o mesmo id do post
 exports.findAll = (req, res) => {
-  const postId = req.query.post_id;
-  var condition = postId ? { postId: postId } : null;
+  const PostId = req.params.PostId;
+  var condition = PostId ? { PostId: PostId } : null;
 
-  Coments.findAll({ where: condition })
+  Coments.findAll({
+    include:
+      [{
+        model: Posts,
+        where: { id: PostId },
+        through: { attributes: [] }
+      
+    }]}
+  )
     .then(data => {
       res.send(data);
     })

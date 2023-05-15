@@ -1,5 +1,6 @@
 const db = require('../models');
-const Posts = db.posts;
+const Posts = db.Posts;
+const Users = db.Users
 const Op = db.Sequelize.Op;
 
 
@@ -15,12 +16,20 @@ exports.create = (req, res) => {
     title: req.body.title,
     desc: req.body.desc,
     content: req.body.content,
-    user_id: req.body.user_id,
-  };
+    UserId: req.body.UserId
+  }
+
 
   Posts.create(post)
-    .then(data => {
-      res.send(data);
+    .then(post => {
+      return post.addUsers(req.body.UserId, {
+        through: {
+          UserId: req.body.UserId
+        }
+      });
+    })
+    .then(() => {
+      res.send({ message: "Post criado com sucesso!" });
     })
     .catch(err => {
       res.status(500).send({
@@ -34,7 +43,7 @@ exports.findAll = (req, res) => {
   const title = req.query.title;
   var condition = title ? { title: { [Op.like]: `%${title}%` } } : null;
 
-  Posts.findAll({ where: condition })
+  Posts.findAll({ where: condition, include:[Users]})
     .then(data => {
       res.send(data);
     })
@@ -49,10 +58,17 @@ exports.findAll = (req, res) => {
 exports.findOne = (req, res) => {
   const id = req.params.id;
 
-  Posts.findByPk(id)
+  Posts.findByPk(id, {
+    include: [
+      {
+        model: Users,
+        attributes: ['username']
+      }
+    ]
+  })
     .then(data => {
       if (data) {
-        res.send(data);
+        res.send(data)
       } else {
         res.status(404).send({
           message: "Não foi possivel achar o post de id=" + id
@@ -88,10 +104,6 @@ exports.update = (req, res) => {
         message: "Não foi possivel o update do post com id=" + id
       });
     });
-};
-
-//likes 
-exports.updateLikes = (req, res) => {
 };
 
 exports.delete = (req, res) => {

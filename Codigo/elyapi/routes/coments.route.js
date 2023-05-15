@@ -5,7 +5,7 @@ module.exports = app => {
 
     router.post("/", coments.create);
     
-    router.get("/", coments.findAll);
+    router.get("/:PostId", coments.findAll);
 
     router.put("/:id", coments.update);
 
@@ -13,3 +13,4 @@ module.exports = app => {
 
     app.use('/api/coments', router);
 }
+
