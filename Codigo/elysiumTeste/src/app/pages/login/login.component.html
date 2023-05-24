@@ -1,0 +1,54 @@
+<section class="vh-100" style="background-color: #0d0e1b;">
+    <div class="container py-5 h-100">
+            <div class="row d-flex align-items-center justify-content-center h-100" style="background-color: #0d0e1b">
+                <div class="col-md-8 col-lg-7 col-xl-6">
+                    <img src="assets\loboazul.png"
+                        class="img-fluid" alt="Phone image">
+                </div>
+    <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1" style="background-color: #0d0e1b">
+        <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+            <div class="form-group">
+                <label for="username">Usuario</label>
+                <input type="text" class="form-control" name="username" [(ngModel)]="form.username" required
+                    #username="ngModel" [ngClass]="{ 'is-invalid': f.submitted && username.errors }" />
+                <div *ngIf="username.errors && f.submitted" class="invalid-feedback">
+                    Usuario faltando
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <input type="password" class="form-control" name="password" [(ngModel)]="form.password" required
+                    minlength="6" #password="ngModel" [ngClass]="{ 'is-invalid': f.submitted && password.errors }" />
+                <div *ngIf="password.errors && f.submitted" class="invalid-feedback">
+                    <div *ngIf="password.errors['required']">Password falhou</div>
+                    <div *ngIf="password.errors['minlength']">
+                        Password no minimo deve ter 6 caracteres
+                    </div>
+                </div>
+            </div>
+            
+            <hr>
+
+            <div class="form-group">
+                        <div class="d-flex justify-content-around align-items-center mb-4">
+                            <button class="btn btn-primary btn-lg btn-block" style="background-color: #1ab5c3; border: #1ab5c3;">
+                                Entrar
+                            </button>
+                            <a href="/cadastro" style="color:#1ab5c3">Faz um cadastro</a>
+                        </div>
+            </div>
+            <div class="form-group">
+                <div *ngIf="f.submitted && isLoginFailed" class="alert alert-danger" role="alert">
+                    Login falho: {{ errorMessage }}
+                </div>
+            </div>
+        </form>
+        <div class="alert alert-success" *ngIf="isLoggedIn">
+            Seja Bem-Vindo(a) {{ username }}
+        <a href="/create">Vamos fazer uma postagem</a>
+        </div>
+    </div>
+</div>
+</div>
+</section>

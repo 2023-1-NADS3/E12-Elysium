@@ -1,0 +1,19 @@
+.form-outline {
+    color: rgb(170, 170, 170);
+}
+
+.form-check {
+    color: rgb(170, 170, 170);
+}
+
+p, small, h3, a {
+    color: rgb(170, 170, 170);
+}
+h4{
+  color: rgb(255,255,255)
+}
+.list {
+    text-align: left;
+    max-width: 750px;
+    margin: auto;
+}
