@@ -1,0 +1,74 @@
+<section class="vh-100" style="background-color: #0d0e1b;">
+    <div class="container py-5 h-100">
+        <div class="row d-flex align-items-center justify-content-center h-100" style="background-color: #0d0e1b">
+            <div class="col-md-8 col-lg-7 col-xl-6">
+                <img src="assets\loboazul.png" class="img-fluid" alt="Phone image">
+            </div>
+            <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1" style="background-color: #0d0e1b">
+        <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+
+            <div class="form-group">
+
+                <label for="username">Usuario</label>
+                <input type="text" class="form-control" name="username" [(ngModel)]="form.username" required
+                    minlength="3" maxlength="20" #username="ngModel"
+                    [ngClass]="{ 'is-invalid': f.submitted && username.errors }" />
+
+                <div class="invalid-feedback" *ngIf="username.errors && f.submitted">
+                    <div *ngIf="username.errors['required']">Digite um nome de usuario</div>
+                    <div *ngIf="username.errors['minlength']">
+                        O nome deve conter no minimo 3 caracteres
+                    </div>
+                    <div *ngIf="username.errors['maxlength']">
+                        O nome deve conter no maximo 20 caracteres
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" name="email" [(ngModel)]="form.email" required email
+                    #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.errors }" />
+                <div class="invalid-feedback" *ngIf="email.errors && f.submitted">
+                    <div *ngIf="email.errors['required']">Email necessario</div>
+                    <div *ngIf="email.errors['email']">
+                        Email invalido
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" name="password" [(ngModel)]="form.password" required
+                    minlength="6" #password="ngModel" [ngClass]="{ 'is-invalid': f.submitted && password.errors }" />
+                <div class="invalid-feedback" *ngIf="password.errors && f.submitted">
+                    <div *ngIf="password.errors['required']">Password necessario</div>
+                    <div *ngIf="password.errors['minlength']">
+                        Password deve ter no minimo 6 caracteres
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="form-group">
+                <div class="d-flex justify-content-around align-items-center mb-4">
+                    <button class="btn btn-primary btn-block" style="background-color: #1ab5c3; border: #1ab5c3;">Cadastre-se</button>
+                    <a href="/login" style="color:#1ab5c3">Faz um login</a>
+
+                </div>
+            </div>
+
+            <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+                Registro falhou<br />{{ errorMessage }}
+            </div>
+        </form>
+
+        <div class="alert alert-success" *ngIf="isSuccessful">
+            Registro feito com sucesso
+          <a href="/login">Logar</a>
+        </div>
+    </div>
+</div>
+</div>
+</section>

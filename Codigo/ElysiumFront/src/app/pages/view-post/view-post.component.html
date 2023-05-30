@@ -1,0 +1,69 @@
+
+<br><br><br>
+
+<style>
+
+</style>
+
+<div class="list-group edit-card" *ngIf="currentPost">
+    <p><a href="/profile/?id={{currentPost.UserId}}"><span>Autor:</span> {{ currentPost.usernames }}</a></p>
+    <p><span>Titulo:</span> {{ currentPost.title }}</p>
+    <p><span>Conteudo:</span> {{ currentPost.content }}</p>
+    <button (click)="isLoggedIn ? likePost() : redirectToLogin()" class="btn btn-link like-button">
+      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
+        <path d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a9.84 9.84 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733.058.119.103.242.138.363.077.27.113.567.113.856 0 .289-.036.586-.113.856-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.163 3.163 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.82 4.82 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z"/>
+      </svg> Likes: {{ currentPost.likes }}
+    </button>
+    
+    <br>
+    <div *ngIf="isLoggedIn && currentPost.UserId  == UserId">
+      <button (click)="deletePost(currentPost.UserId)" class="btn btn-danger">Apagar Post</button>
+    </div>
+    
+    <div *ngIf="isLoggedIn && currentPost.UserId  == UserId">
+      <div class="form-group">
+        <label for="title">Titulo</label>
+        <input type="text" class="form-control" id="title" required [(ngModel)]="currentPost.title" name="title" />
+      </div>
+  
+      <div class="form-group">
+        <label for="desc">Descrição</label>
+        <input type="text" class="form-control" id="desc" required [(ngModel)]="currentPost.desc" name="desc">
+      </div>
+
+      <div class="form-group">
+        <label for="content">Conteudo</label><br>
+        <textarea class="form-control" rows="3" id="content" placeholder="Digite seu texto aqui..." required
+          [(ngModel)]="currentPost.content" name="content"></textarea>
+      </div>
+       <div class="error-message" *ngIf="currentPost.title || !currentPost.desc || !currentPost.content">{{erroP}}</div>
+      <button (click)="updatePost()" class="edit-button">Editar</button>
+    </div>
+  </div>
+
+  <div class="list-group edit-card">
+    <label for="coments">Deixe seu comentario</label>
+    <textarea name="coments" id="coments" cols="40" rows="3" placeholder="Digite seu comentario..." [(ngModel)]="comentario"></textarea>
+    <div class="error-message" *ngIf="!comentario">{{erroM}}</div>
+    <button (click)="isLoggedIn ? saveComent() : redirectToLogin()">Comentar</button>
+  </div> 
+    <br>
+  
+  <div class="comment-section">
+    <div *ngFor="let coments of coments" class="comment-card">
+      <p><a href="/profile/?id={{coments.user.id}}">User: {{ coments.user.username}} </a></p>
+      <p>Comment: {{ coments.coment }}</p>
+      <button (click)="isLoggedIn ? likeComent(coments.id, coments.like) : redirectToLogin()">like {{ coments.like }}</button>
+  
+      <div *ngIf="isLoggedIn && coments.user.id  == UserId">
+        <button (click)="deleteComent(coments.id)">Deletar</button>
+        <div>
+          <label for="comenta">Atualize o seu comentario</label>
+          <textarea name="coments" id="coments" cols="40" rows="2" placeholder="Digite seu comentario..." [(ngModel)]="comenta"></textarea>
+          <div class="error-message"  *ngIf="!comenta">{{erroM2}}</div>
+          <button (click)="updateComent(coments.id)">Atualizar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

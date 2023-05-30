@@ -1,0 +1,56 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://netdna.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet">
+<body>
+    
+
+<br><br><br><br>    
+<div class="list row">
+    <div class="col-md-8">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Procure" [(ngModel)]="title" />
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" (click)="searchPost()">
+                    Pesquisar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="isLoggedIn == true; else loggedOut">
+    <a href="/create">Faça um post</a>
+    </div>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="media g-mb-30 media-comment">
+                    <div class="media-body u-shadow-v18  g-pa-30" *ngFor="let post of post">
+                        <div class="g-mb-15">
+                            <h5 class="h5  mb-0"><a class="titulo"href="view/?id={{post.id}}">{{ post.title }}</a></h5>
+                            <span class="g-color-gray-dark-v4 g-font-size-12">{{post.createdAt}}</span>
+                        </div>
+                        <p>{{ post.desc }}</p>
+                        <ul class="list-inline d-sm-flex my-0">
+                            <li class="list-inline-item g-mr-20">
+                                <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" (click)="isLoggedIn ? updateLike(post.id, post.likes) : redirectToLogin()">
+                                    <i class="fa fa-thumbs-up g-pos-rel g-top-1 g-mr-3"></i>
+                                    {{ post.likes }}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+                    <script src="https://netdna.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+<ng-template #loggedOut>
+<a href="/cadastro">Vamos criar uma conta para fazer um post</a>
+</ng-template>
+
