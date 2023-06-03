@@ -19,6 +19,11 @@ const id = urlParams.get('id');
 export class ViewPostComponent implements OnInit{  
   coments?: Coments[]
 
+  dialogOpenApagarPost = false
+  dialogOpenEditarPost = false
+  dialogOpenApagarComentario = false
+  dialogOpenEditarComentario =false 
+
   currentCom: Coments = {
     id: 0,
     coment: '',
@@ -191,7 +196,7 @@ export class ViewPostComponent implements OnInit{
     })
   }
 
-  likeComent(Cid:any, like:number): void{
+  likeComent(Cid:any, like:any): void{
     like = like + 1
     const data = {
       like: like
@@ -200,27 +205,45 @@ export class ViewPostComponent implements OnInit{
       next: (res) => {
         console.log(res)
         window.location.reload()
+        
       },
        error: (e) => console.error(e)
     })
-
   }
-
     redirectToLogin() {
     this.router.navigate(['/login']);
   }
 
   openDialog(dialogId: string) {
+  if (dialogId === 'apagarPost') {
+    this.dialogOpenApagarPost = true;
+  } else if (dialogId === 'editarPost') {
+    this.dialogOpenEditarPost = true;
+  } else if (dialogId === 'apagarComentario') {
+    this.dialogOpenApagarComentario = true;
+  } else if (dialogId === 'editarComentario') {
+    this.dialogOpenEditarComentario = true;
+  }
     const dialog = document.getElementById(dialogId);
     if (dialog) {
-      dialog.style.display = 'block';
+      dialog.style.display = 'block'
     }
   }
 
   closeDialog(dialogId: string) {
+    if (dialogId === 'apagarPost') {
+    this.dialogOpenApagarPost = false;
+  } else if (dialogId === 'editarPost') {
+    this.dialogOpenEditarPost = false;
+  } else if (dialogId === 'apagarComentario') {
+    this.dialogOpenApagarComentario = false;
+  } else if (dialogId === 'editarComentario') {
+    this.dialogOpenEditarComentario = false;
+  }
     const dialog = document.getElementById(dialogId);
     if (dialog) {
       dialog.style.display = 'none';
+      
     }
   }
 }

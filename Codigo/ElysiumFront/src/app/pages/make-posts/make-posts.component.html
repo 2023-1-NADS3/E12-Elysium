@@ -23,11 +23,10 @@
         <div class="error-message">{{erroM}}</div>
     </div>
 
-    <div *ngIf="submitted">
+    <div class="btnss" *ngIf="submitted">
         <h4>Post foi enviado com sucesso!</h4>
-        <button class="btn btn-success" (click)="newPost()">Criar mais um Post</button>
-        <a href="/posts">Ver todos os Posts</a>
-
+        <button class="btn btn-success" id="btn1" (click)="newPost()">Criar mais um Post</button>
+        <button class="btn btn-success" id="btn2" href="/posts">Ver todos os Posts</button>
     </div>
 </div>
 </div>

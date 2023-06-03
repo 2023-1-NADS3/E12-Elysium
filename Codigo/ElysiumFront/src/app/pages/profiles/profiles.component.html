@@ -41,3 +41,24 @@
 <ng-template #loggedOut>
 
 </ng-template>
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="media g-mb-30 media-comment">
+                <h2>Suas Postagens</h2>
+                <div class="media-body u-shadow-v18  g-pa-30" *ngFor="let post of user.post">
+                    <div class="g-mb-15">
+                        <h3 class="h5  mb-0"><a class="titulo" href="view/?id={{post.id}}">{{ post.title }}</a></h3>
+                    </div>
+                    <p>{{ post.content }}</p>
+                </div>
+
+                <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+                <script src="https://netdna.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+            </div>
+        </div>
+    </div>
+</div>
