@@ -16,30 +16,39 @@
     </button>
     
     <br>
+
     <div *ngIf="isLoggedIn && currentPost.UserId  == UserId">
-      <button (click)="deletePost(currentPost.UserId)" class="btn btn-danger">Apagar Post</button>
+      <button (click)="openDialog('apagarPost')" class="btn btn-danger">Apagar</button>
+      <button (click)="openDialog('editarPost')" class="btn btn-danger">Editar</button>
     </div>
-    
-    <div *ngIf="isLoggedIn && currentPost.UserId  == UserId">
+    <dialog id="apagarPost" >
+      <h2>Apagar post</h2>
+      <p>Deseja mesmo apagar</p>
+      <button (click)="closeDialog('apagarPost')" class="btn btn">Cancelar</button>
+      <button (click)="deletePost(currentPost.UserId)" class="btn btn-danger">Apagar</button>
+    </dialog>
+
+    <dialog id="editarPost" >
       <div class="form-group">
         <label for="title">Titulo</label>
         <input type="text" class="form-control" id="title" required [(ngModel)]="currentPost.title" name="title" />
       </div>
-  
+      
       <div class="form-group">
         <label for="desc">Descrição</label>
         <input type="text" class="form-control" id="desc" required [(ngModel)]="currentPost.desc" name="desc">
       </div>
-
+      
       <div class="form-group">
         <label for="content">Conteudo</label><br>
         <textarea class="form-control" rows="3" id="content" placeholder="Digite seu texto aqui..." required
           [(ngModel)]="currentPost.content" name="content"></textarea>
       </div>
-       <div class="error-message" *ngIf="currentPost.title || !currentPost.desc || !currentPost.content">{{erroP}}</div>
+      <div class="error-message" *ngIf="currentPost.title || !currentPost.desc || !currentPost.content">{{erroP}}</div>
+      <button (click)="closeDialog('editarPost')" class="btn btn">Cancelar</button>
       <button (click)="updatePost()" class="edit-button">Editar</button>
-    </div>
-  </div>
+    </dialog>
+
 
   <div class="list-group edit-card">
     <label for="coments">Deixe seu comentario</label>
@@ -54,16 +63,30 @@
       <p><a href="/profile/?id={{coments.user.id}}">User: {{ coments.user.username}} </a></p>
       <p>Comment: {{ coments.coment }}</p>
       <button (click)="isLoggedIn ? likeComent(coments.id, coments.like) : redirectToLogin()">like {{ coments.like }}</button>
-  
+      
       <div *ngIf="isLoggedIn && coments.user.id  == UserId">
-        <button (click)="deleteComent(coments.id)">Deletar</button>
-        <div>
-          <label for="comenta">Atualize o seu comentario</label>
-          <textarea name="coments" id="coments" cols="40" rows="2" placeholder="Digite seu comentario..." [(ngModel)]="comenta"></textarea>
-          <div class="error-message"  *ngIf="!comenta">{{erroM2}}</div>
-          <button (click)="updateComent(coments.id)">Atualizar</button>
-        </div>
+        <button (click)="openDialog('apagarComentario')" class="btn btn-danger">Apagar comentario</button>
+        <button (click)="openDialog('editarComentario')" class="btn btn-danger">Editar comentario</button>
+       
       </div>
-    </div>
+
+      <dialog id="apagarComentario">
+        <h2>Apagar comentario</h2>
+        <p>Deseja mesmo apagar</p>
+        <button (click)="closeDialog('apagarComentario')" class="btn btn">Cancelar</button>
+        <button (click)="deleteComent(coments.id)">Deletar</button>
+      </dialog>
+      
+      <dialog id="editarComentario" >
+        <label for="comenta">Atualize o seu comentario</label>
+        <textarea name="coments" id="coments" cols="40" rows="2" placeholder="Digite seu comentario..."
+          [(ngModel)]="comenta"></textarea>
+        <div class="error-message" *ngIf="!comenta">{{erroM2}}</div>
+        <button (click)="closeDialog('editarComentario')" class="btn btn">Cancelar</button>
+        <button (click)="updateComent(coments.id)">Atualizar</button>
+      </dialog>
+  
+      </div>
+      </div>
   </div>
   

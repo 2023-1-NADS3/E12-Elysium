@@ -209,4 +209,18 @@ export class ViewPostComponent implements OnInit{
     redirectToLogin() {
     this.router.navigate(['/login']);
   }
+
+  openDialog(dialogId: string) {
+    const dialog = document.getElementById(dialogId);
+    if (dialog) {
+      dialog.style.display = 'block';
+    }
+  }
+
+  closeDialog(dialogId: string) {
+    const dialog = document.getElementById(dialogId);
+    if (dialog) {
+      dialog.style.display = 'none';
+    }
+  }
 }
