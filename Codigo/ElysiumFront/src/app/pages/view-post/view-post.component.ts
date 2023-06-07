@@ -19,6 +19,9 @@ const id = urlParams.get('id');
 export class ViewPostComponent implements OnInit{  
   coments?: Coments[]
 
+  likedPosts: number[] = [];
+  likedComments: number[] = [];
+
   dialogOpenApagarPost = false
   dialogOpenEditarPost = false
   dialogOpenApagarComentario = false
@@ -81,7 +84,7 @@ export class ViewPostComponent implements OnInit{
   retriveComents(id: any): void{
     this.comentService.getComents(id).subscribe({
       next: (data) => {
-        this.coments = data
+        this.coments = data.sort((a, b) => b.like - a.like);
         console.log(data)
       }
     })
@@ -97,20 +100,23 @@ export class ViewPostComponent implements OnInit{
     })
   }
 
-  likePost(): void{
-    this.currentPost.likes++
+  likePost(): void {
+  if (!this.likedPosts.includes(this.currentPost.id)) {
+    this.currentPost.likes++;
+    this.likedPosts.push(this.currentPost.id);
+
     const data = {
       likes: this.currentPost.likes
-    }
+    };
+
     this.postService.update(this.currentPost.id, data).subscribe({
       next: (res) => {
-        console.log(res)
-        this.currentPost.likes
+        console.log(res);
       },
-       error: (e) => console.error(e)
-    })
-
+      error: (e) => console.error(e)
+    });
   }
+}
 
   deletePost(idCriador: any): void{
     if (idCriador == this.UserId) {
@@ -130,6 +136,7 @@ export class ViewPostComponent implements OnInit{
   } 
 
   updatePost(): void{
+    
 
     const data = {
       title: this.currentPost.title,
@@ -196,20 +203,27 @@ export class ViewPostComponent implements OnInit{
     })
   }
 
-  likeComent(Cid:any, like:any): void{
-    like = like + 1
+  likeComent(Cid: any, like: any): void {
+  if (!this.likedComments.includes(Cid)) {
+    like = like + 1;
+    this.likedComments.push(Cid);
+
     const data = {
       like: like
-    }
+    };
+
     this.comentService.updateComent(Cid, data).subscribe({
       next: (res) => {
-        console.log(res)
-        window.location.reload()
-        
+        console.log(res);
+        const updatedComent = this.coments?.find(c => c.id === Cid);
+        if (updatedComent) {
+          updatedComent.like = like;
+        }
       },
-       error: (e) => console.error(e)
-    })
+      error: (e) => console.error(e)
+    });
   }
+}
     redirectToLogin() {
     this.router.navigate(['/login']);
   }

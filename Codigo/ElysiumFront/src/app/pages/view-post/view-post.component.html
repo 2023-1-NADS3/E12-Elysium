@@ -47,7 +47,7 @@
         <textarea class="form-control" rows="3" id="content" placeholder="Digite seu texto aqui..." required
           [(ngModel)]="currentPost.content" name="content"></textarea>
       </div>
-      <div class="error-message" *ngIf="currentPost.title || !currentPost.desc || !currentPost.content">{{erroP}}</div>
+      <div class="error-message" *ngIf="!currentPost.title || !currentPost.desc || !currentPost.content">Campos vazios serão salvos com seus valores antigos</div>
       <button (click)="closeDialog('editarPost')" class="btn btn">Cancelar</button>
       <button (click)="updatePost()" class="btn btn">Editar</button>
     </dialog>

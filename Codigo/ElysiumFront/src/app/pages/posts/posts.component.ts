@@ -13,6 +13,7 @@ import { formatDate } from '@angular/common';
 })
 export class PostsComponent {
 
+  likedPosts: number[] = [];
   post?: Post[]
   currentPost: Post = {
     title: '',
@@ -66,24 +67,28 @@ export class PostsComponent {
   } 
 
   
-  updateLike(idButton: any, likes: number): void{
-      likes++
-        
-      const data = {
-      likes: likes,
-      
-      }
-    console.log(idButton, likes)
-    
+updateLike(idButton: any, likes: number): void {
+  if (!this.likedPosts.includes(idButton)) {
+    likes++;
+
+    const data = {
+      likes: likes
+    };
+
     this.postService.update(idButton, data).subscribe({
       next: (res) => {
-        console.log(res)
-        window.location.reload()
+        console.log(res);
+        const updatedPost = this.post?.find(p => p.id === idButton);
+        if (updatedPost) {
+          updatedPost.likes = likes;
+        }
       },
-       error: (e) => console.error(e)
-    })
+      error: (e) => console.error(e)
+    });
 
+    this.likedPosts.push(idButton);
   }
+}
 
   searchPost(): void{
     this.currentPost = {
@@ -97,7 +102,10 @@ export class PostsComponent {
 
     this.postService.findByTitle(this.title).subscribe({
       next: (data) => {
-        this.post = data
+        this.post = data.map(post => {
+          const formattedDate = formatDate(post.createdAt, 'dd/MM/yyyy', 'en-US')
+          return {...post, createdAt: formattedDate}
+        })
         console.log(data)
       },
       error: (e) => console.log(e)
@@ -112,20 +120,3 @@ export class PostsComponent {
 
 
 
-/*
- setActivePost(post: Post, index: number): void{
-    this.currentPost = post
-    this.currentIndex = index
- }
-  
-  refreshList(): void{
-    this.retrivePosts()
-    this.currentPost = {
-    title: '',
-    desc: '',
-    content: '',
-    likes: 0,
-    }
-    this.currentIndex = -1
-  }
-  */

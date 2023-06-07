@@ -11,11 +11,15 @@ import { Router } from '@angular/router';
 })
 export class MakePostsComponent implements OnInit {
   submitted = false
-  erroM = ''
+
   currentUser: any;
   isloged = false
   id: any
-
+  erroT = ''
+  erroD = ''
+  erroC = ''
+  erroM = ''
+    
   post: Post = {
     title: '',
     desc: '',
@@ -31,7 +35,7 @@ export class MakePostsComponent implements OnInit {
     this.currentUser = this.storageService.getUser();
     this.isloged = this.storageService.isLoggedIn();
     if (!this.isloged) { 
-      this.redirectToLogin()
+    this.redirectToLogin()
     }
     this.id = this.currentUser.id
   }
@@ -66,6 +70,9 @@ export class MakePostsComponent implements OnInit {
      }
   }
 
+  posts() {
+    this.router.navigate(['/posts'])
+  }
     redirectToLogin() {
     this.router.navigate(['/login']);
   }
