@@ -5,50 +5,48 @@
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
-  
+
   label{
     color: #fff;
   }
 
   .edit-card p {
     margin-bottom: 10px;
-    
     text-decoration: none;
-    color:#fff;
   }
-  
+
   input{
     color: #fff;
     background-color: #1d232b;
   }
-  
+
   .edit-card a {
     color: inherit;
     text-decoration: none;
-    
+
   }
-  
+
   .edit-card a:hover {
     text-decoration: underline;
   }
-  
+
   .edit-card button {
     color: white;
-    
+
     text-decoration: none;
     background-color: #00b9cd;
     border: none;
     cursor: pointer;
   }
-  
+
   .edit-card button:hover {
     text-decoration: underline;
   }
-  
+
   .edit-card label {
     font-weight: bold;
   }
-  
+
   .edit-card input[type="text"],
   .edit-card textarea,
   #coments {
@@ -60,7 +58,7 @@
     background-color: #1d232b;
     resize: vertical;
   }
-  
+
   .edit-card button.edit-button {
     margin-top: 10px;
     padding: 8px 16px;
@@ -70,14 +68,14 @@
     border-radius: 4px;
     cursor: pointer;
   }
-  
+
   .edit-card .error-message {
     color: red;
     margin-top: 10px;
-    
+
   }
 
-  
+
   .edit-card {
     margin: 20px;
       background-color: #1d232b;
@@ -85,38 +83,36 @@
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
-  
+
   .edit-card .button-group {
     margin-top: 10px;
   }
-  
+
   .edit-card .button-group button {
     margin-right: 10px;
   }
 
-  
+
   .comment-section {
     margin-top: 20px;
     padding: 20px;
-    background-color:#1d232b;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
-  
+
   .comment-card {
     margin-bottom: 20px;
     padding: 10px;
     background-color: #171c22;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    color: white;
   }
-  
+
   .comment-card p {
     margin-bottom: 5px;
     color: #00b9cd;
   }
-  
+
   .comment-card button {
     padding: 5px 10px;
     border: none;
@@ -126,11 +122,11 @@
     cursor: pointer;
     font-size: 14px;
   }
-  
+
   .comment-card button:hover {
     background-color: #3672d9;
   }
-  
+
   .comment-card textarea {
     width: 100%;
     resize: vertical;
@@ -139,7 +135,7 @@
     padding: 5px;
     font-size: 14px;
   }
-  
+
   .comment-card .error-message {
     color: red;
     margin-top: 5px;
@@ -186,3 +182,184 @@
         margin-right: 10px;
         margin-bottom: 10px;
       }
+      .list-group {
+        margin: 20px;
+      }
+
+      .edit-card {
+        background-color: #141d26;
+        color: #ffffff;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 0.25rem;
+        padding: 1rem;
+      }
+
+      .post-author {
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+
+      }
+
+      .post-author-img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 0.5rem;
+      }
+
+      .post-author-username {
+        font-weight: bold;
+        margin-right: 0.5rem;
+      }
+
+      .post-title {
+        font-weight: bold;
+        color: #afafaf;
+
+      }
+
+      .like-button {
+        color: #1da1f2;
+        display: flex;
+        align-items: center;
+      }
+
+      .like-button svg {
+        margin-right: 0.25rem;
+      }
+
+      .btn-link {
+        border: none;
+        background-color: transparent;
+        padding: 0;
+        color: #1da1f2;
+      }
+
+      .btn-link:focus,
+      .btn-link:hover {
+        text-decoration: underline;
+      }
+
+      .comment-card {
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .comment-card p {
+        margin-bottom: 0.5rem;
+      }
+
+      .comment-card button {
+        color: #1da1f2;
+        display: flex;
+        align-items: center;
+        margin-top: 0.5rem;
+      }
+
+      .comment-card button svg {
+        margin-right: 0.25rem;
+      }
+
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .dialog {
+        background-color: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.125);
+        border-radius: 0.25rem;
+        padding: 1rem;
+        max-width: 400px;
+      }
+
+      .dialog h2 {
+        margin-bottom: 0.5rem;
+      }
+
+      .dialog button {
+        margin-right: 0.5rem;
+      }
+
+      .error-message {
+        color: #dc3545;
+        margin-top: 0.5rem;
+      }
+      .post-card .comment-section {
+        margin-top: 20px;
+      }
+
+      .post-card .comment-card {
+        background-color: #F5F8FA;
+        color: #14171A;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+
+      .post-card .comment-card p {
+        margin: 0;
+      }
+
+      .post-card .comment-card a {
+        text-decoration: none;
+        color: #1DA1F2;
+      }
+
+      .post-card .comment-card button {
+        display: flex;
+        align-items: center;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #1DA1F2;
+      }
+
+      .post-card .comment-card svg {
+        margin-right: 5px;
+        vertical-align: middle;
+      }
+
+      .post-card .comment-card div {
+        margin-top: 10px;
+      }
+
+      .post-card .btn-danger {
+        background-color: #E0245E;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 3px;
+        border: none;
+        cursor: pointer;
+      }
+
+      .post-card .btn-danger:hover {
+        background-color: #CC1543;
+      }
+a{
+  color: inherit;
+  text-decoration: none;
+}
+.comment-section button path{
+background-color: #ffffff;
+color: #ffffff;
+}
+#like2{
+  color: #ccc;
+}
+.comment-section a{
+  color: #ffffff;
+}
+.comment-section p{
+  color:  #ccc;
+}
+
