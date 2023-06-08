@@ -10,6 +10,46 @@ body {
   }
 
 /*--------header-----------*/
+.image-container1 img {
+  width: 100%;
+  filter: brightness(0.5); /* Diminui a luminosidade da imagem */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.842); /* Cria o efeito de sombra */
+}
+
+
+.image-container1 {
+  position: relative;
+  text-align: center;
+}
+
+.image-container1 img {
+  width: 100%;
+  height: auto;
+}
+
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+.image-container1 {
+  position: relative;
+}
+
+
+.image-container1{
+  margin-bottom: 50px;
+}
+
+.image-container1 {
+  position: relative;
+}
+
 
 header {
   position: relative;
@@ -96,7 +136,7 @@ h1,h2{
   a {
     text-decoration: none;
     outline: 0;
-    color: #222222;
+    color: #ffffff;
     line-height: 26px;
   }
 
@@ -205,7 +245,7 @@ h1,h2{
 
 
 .publicaciones-blog-home {
-  
+
   padding-bottom: 50px;
   background-size: 100% auto;
 }
@@ -235,7 +275,7 @@ color: #2BBCDE;
 }
 .publicaciones-blog-home .fondo-publicacion-home:hover .mascara-enlace-blog-home {
     height: 400px;
-    
+
     width: 100%;
     color: #aaa;
     background-color: #2BBCDE;
@@ -244,15 +284,15 @@ color: #2BBCDE;
     opacity: 0.95;
     -webkit-transition: all 0.4s ease-out 0s;
     -o-transition: all 0.4s ease-out 0s;
-    transition: all 0.4s ease-out 0s;   
+    transition: all 0.4s ease-out 0s;
 }
 .publicaciones-blog-home .black {
-	background: #2BBCDE;
+    background-color: #036d79;
 }
 .publicaciones-blog-home .fondo-publicacion-home .img-publicacion-principal-home {
 	display: inline-block;
     width: 50%;
-    
+
     overflow: hidden;
     height: 100%;
 }
@@ -268,7 +308,7 @@ color: #2BBCDE;
 }
 .publicaciones-blog-home .fondo-publicacion-home .contenido-publicacion-principal-home h3 {
     font-weight: 900;
-    
+
     color: #fff;
     text-transform: uppercase;
     font-size: 30px;
@@ -307,7 +347,7 @@ color: #2BBCDE;
 .mascara-enlace-blog-home span {
     text-align: center;
     max-height: 400px;
-    
+
     border: 1px solid #fff;
     display: inline-block;
     padding: 10px 30px;
@@ -327,7 +367,7 @@ color: #2BBCDE;
 }
 .publicaciones-blog-home .todas-las-publicaciones-home span {
     color: rgb(0, 0, 0);
-    
+
     font-weight: 900;
     text-transform: uppercase;
     font-size: 25px;
@@ -344,7 +384,7 @@ color: #2BBCDE;
     .publicaciones-blog-home .fondo-publicacion-home {
     border-radius: 3px;
     overflow: hidden;
-    background-color: #00b9cd;
+    background-color: #011127;
     height: inherit;
     margin-bottom: 20px;
     display: block;
@@ -371,14 +411,15 @@ color: #2BBCDE;
     }
     .publicaciones-blog-home .fondo-publicacion-home .contenido-publicacion-principal-home h3 {
     font-weight: 900;
-    color: #333;
+    color: #ebe8e8;
     text-transform: uppercase;
     font-size: 20px;
     }
     .publicaciones-blog-home .fondo-publicacion-home .contenido-publicacion-principal-home p {
-    color: #333;
+    color: #bbb9b9;
     font-size: 14px;
     font-weight: 400;
+    text-align: left;
     }
     .publicaciones-blog-home .todas-las-publicaciones-home {
     background: #2BBCDE;
