@@ -879,6 +879,7 @@ h2 {
 .widget .tagcloud a:hover {
     background-color: #00b9cd;
     border-color: transparent;
+
 }
 
 
@@ -1470,3 +1471,7 @@ header .overlay {
         padding: 30px 20px;
     }
 }
+
+
+
+

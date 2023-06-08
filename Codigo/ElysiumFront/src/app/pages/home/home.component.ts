@@ -55,7 +55,9 @@ export class HomeComponent implements OnInit {
   showGamesToday() {
     this.gamesToday = [
       { team1: { name: 'Team A', icon: 'assets/keyd.png' }, team2: { name: 'Team B', icon: 'assets/imperial.png' }, result: '' },
-      { team1: { name: 'Team C', icon: 'assets/g2.png' }, team2: { name: 'Team D', icon: 'assets/furia.png' }, result: '' }
+      { team1: { name: 'Team C', icon: 'assets/g2.png' }, team2: { name: 'Team D', icon: 'assets/furia.png' }, result: '' },
+      { team1: { name: 'Team E', icon: 'assets/unn.png' }, team2: { name: 'Team F', icon: 'assets/tlt.png' }, result: '' }
+
     ];
     this.pastGames = [];
   }
@@ -64,7 +66,9 @@ export class HomeComponent implements OnInit {
     this.gamesToday = [];
     this.pastGames = [
       { team1: { name: 'Team E', icon: 'assets/boom.png' }, team2: { name: 'Team F', icon: 'assets/red.png' }, result: '3 - 2' },
-      { team1: { name: 'Team G', icon: 'assets/keyd.png' }, team2: { name: 'Team H', icon: 'assets/tlt.png' }, result: '1 - 0' }
+      { team1: { name: 'Team G', icon: 'assets/keyd.png' }, team2: { name: 'Team H', icon: 'assets/tlt.png' }, result: '1 - 2' },
+      { team1: { name: 'Team I', icon: 'assets/g2.png' }, team2: { name: 'Team J', icon: 'assets/unn.png' }, result: '2 - 3' }
+
     ];
   }
 }
