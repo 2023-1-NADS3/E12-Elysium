@@ -26,29 +26,31 @@
             </svg> <button type="button" class="btn btn-outline-info btn-sm" >Vamo criar uma postagem hoje!!! </button></a>
     </div>
 </div>
-
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <div class="container">
-    <div class="row">
-        <div class="col-md-8">
-            <div class="media g-mb-30 media-comment">
-                <h2>Suas postagens</h2>
-                <div class="media-body u-shadow-v18  g-pa-30" *ngFor="let post of user.posts">
-                    <div class="g-mb-15">
-                        <h5 class="h5  mb-0"><a class="titulo" href="view/?id={{post.id}}">{{ post.title }}</a></h5>
-                    </div>
-                    <p>{{ post.content }}</p>
-                    <i class="fa fa-thumbs-up g-pos-rel g-top-1 g-mr-3"></i>
-                    {{ post.likes }}
-                </div>
-
-                <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-                <script src="https://netdna.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
-            </div>
+  <div class="row">
+    <div class="col-md-8">
+      <h3>Suas postagens</h3>
+      <div class="post-card" *ngFor="let post of user.posts">
+        <div class="post-header">
+          <img class="post-author-img rounded-circle" src="assets/perfil.jpg" alt="Foto de Perfil">
+          <h5 class="post-author-username">{{ post.author }}</h5>
+          <a class="post-timestamp" href="#">{{ post.timestamp }}</a>
         </div>
-    </div>
-</div>
+        <div class="post-content">
+          <h5 class="post-title"><a class="titulo" href="view/?id={{post.id}}">{{ post.title }}</a></h5>
+          <p>{{ post.content }}</p>
+        </div>
+        <div class="post-details">
+          <div class="like-button" style="display: flex; flex-direction: row;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16" style="margin-right: 5px;">
+              <path d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a9.84 9.84 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733.058.119.103.242.138.363.077.27.113.567.113.856 0 .289-.036.586-.113.856-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.163 3.163 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.82 4.82 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z"/>
+            </svg>
+            <p>{{ post.likes }}</p>
+          </div>
+        </div>
+      </div>
+
+
 
 <ng-template #loggedOut>
     Porfavor faça um login
