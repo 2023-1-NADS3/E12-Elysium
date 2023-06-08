@@ -7,7 +7,7 @@
 
     <!-- The HTML5 video element that will create the background video on the header -->
     <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-      <source src="assets\video.mp4" type="video/mp4">
+      <source src="assets\video1.mp4" type="video/mp4">
     </video>
 
     <!-- The header content -->
@@ -16,9 +16,9 @@
         <div class="w-100 text-white">
           <h2 class="display-3"><span>ELYSIUM</span></h2>
           <p class="lead mb-0">Lorem ipsum dolor sit..</p>
-          <button type="button" style="color:  rgb(0, 185, 205);" class="btn btn-outline-info" *ngIf="!isLoggedIn"
+          <button type="button" style="color:  rgb(255, 255, 255);" class="btn2" *ngIf="!isLoggedIn"
             routerLink="login">Login</button>
-          <button type="button" style="color:  rgb(0, 185, 205);" class="btn btn-outline-info" *ngIf="isLoggedIn"
+          <button type="button" style="color:  rgb(255, 255, 255);" class="btn2" *ngIf="isLoggedIn"
             routerLink="profile">Profile</button>
         </div>
       </div>
@@ -28,10 +28,171 @@
 
 
 
+  <style>
+.team-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+align-items: baseline;
+}
+
+.team-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+.vs {
+  font-size: 24px;
+  margin: 0 10px;
+}
+.card{
+  margin-bottom: 10px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+}
+
+.team-icon {
+  width: 50px;
+  height: 50px;
+}
+.team-result{
+margin-top: -20px;
+}
+.team-name {
+  margin-top: 5px;
+  text-align: center;
+  color: #fff;
+}
 
 
-  <div class="container">
-    <h1 class="mt-3">Descubra um Universo de Jogos</h1>
+.team-icon {
+  width: 50px; /* Defina o tamanho desejado para os ícones */
+}
+.container {
+  text-align: center;
+}
+
+
+
+.btn {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 10px 20px;
+  background-color: #ddd;
+  border: none;
+  cursor: pointer;
+}
+
+.games-container {
+  margin-top: 20px;
+}
+
+.game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.team {
+  margin: 0 10px;
+}
+
+.vs {
+  color: #fff;
+  font-weight: bold;
+}
+.team-result{
+  color: #fff;
+}
+
+
+
+    .background-overlay {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+    }
+
+    .background-overlay:before {
+      content: "";
+      position: absolute;
+      top: 20%;
+      left: 10%;
+      width: 80%;
+      height: 60%;
+      background-image: url('assets/god.png');
+      background-size: cover;
+      opacity: 0.8;
+    }
+
+    .background-overlay:after {
+      content: "";
+      position: absolute;
+      top: 15%;
+      align-items: center;
+      width: 100%;
+      height: 80%;
+
+      background-image: url('assets/godd.png');
+      background-size: cover;
+
+    }
+    .background-over h1{
+margin-top: 3%;
+margin-bottom: -10%;
+  font-size: 1.4em;
+}
+.background-over h2{
+  color: #fff;
+  margin-bottom: 5%;
+}
+.background-over p{
+color: #9c9c9c;
+}
+  </style>
+  <div class="background-over">
+  <div class="background-overlay">
+
+    <!-- Conteúdo da página -->
+
+  </div>
+  <h1>ABOUT ELYSIUM</h1>
+  <h2>Descubra um Universo de Jogos</h2>
+  <p>Junte-se a nós no Mundo dos Jogos! Divirta-se, compita e faça amigos. Temos algo para todos os tipos de jogadores. Explore recursos, faça novas amizades, melhore suas habilidades e faça parte de nossa comunidade vibrante.</p>
+
+  <div class="button-container">
+    <a href="#" class="button">Saiba Mais</a>
+    <br>
+    <br>
+    <br>
+    <br>
+  </div>
+</div>
+
+
+
+
+  <style>
+    .background-over {
+      background: linear-gradient(to right, #11172c 50%, #14142c 50%);
+      background-size: 200% 100%;
+      animation: background-animation 5s linear infinite;
+    }
+
+    @keyframes background-animation {
+      0% { background-position: 0 0; }
+      100% { background-position: -100% 0; }
+    }
+  </style>
+
+
 
 
 
@@ -43,14 +204,15 @@
 
       .parallax {
         position: relative;
-        height: 350px;
+        height: 200px;
         overflow: hidden;
-        width: 350px;
+        width: 200px;
         border-radius: 50%;
         transform-style: preserve-3d;
 
         box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.445);
       }
+
 
       .parallax:before {
         content: "";
@@ -66,33 +228,25 @@
 
       }
 
-      .content {
+      #fox {
         position: relative;
         text-align: center;
-        margin-top: -50%;
+        margin-bottom: 210%;
+        width: 70%;
+        height: auto;
+      }
+      .service-title h2{
+       text-align: left;
+      }
+      .btn{
+        display: inline-block;
+    padding: 10px 20px;
+    background-color: #00aaff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
       }
     </style>
-
-    <body>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 offset-md-3">
-            <div class="parallax">
-              <div class="content">
-                <img src="assets\foza.gif" alt="Imagem Sobreposta" class="img-fluid">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <p class="mb-3">Junte-se a nós no Mundo dos Jogos e mergulhe em uma experiência inigualável de diversão,
-        competição e camaradagem. Não importa se você é um jogador casual ou um competidor ávido, temos algo para todos.
-        Explore nossos recursos, faça novos amigos, melhore suas habilidades e torne-se parte de uma comunidade vibrante
-        de jogadores.
-
-      </p>
-      <a href="#" class="btn1">Botão</a>
 
 
 
@@ -108,17 +262,57 @@
         <div class="bottom-pattern-layer" style="background-image: url(assets/pattern-2.png);"></div>
 
       </section>
-
       <!--Video Section-->
       <section class="video-section">
-        <div class="image-layer" style="background-image: url(assets/video-bg.jpg);"></div>
+        <div class="image-layer" style="background-image: url(assets/vava.jpg);"></div>
 
         <div class="auto-container">
           <div class="content-box wow zoomInStable" data-wow-delay="0ms" data-wow-duration="2500ms">
             <div class="content">
-              <img src="assets\image_10_2.png" alt="Overlay Image">
-              <h1>Jogos</h1>
-              <p>This is a sample text below the image.</p>
+              <div class="container">
+                <h1 class="text-center">
+                  TORNEIOS POPULARES</h1>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="d-flex justify-content-between">
+                      <button class="btn  mb-3" (click)="showGamesToday()" [class.active]="gamesToday.length > 0">Próximos Jogos</button>
+                      <button class="btn  mb-3" (click)="showPastGames()">Resultados</button>
+                    </div>
+                    <div class="tournament-title" *ngIf="gamesToday.length > 0">
+                      <div class="card" *ngFor="let game of gamesToday">
+                        <div class="team-container">
+                          <div class="team-info">
+                            <img src="{{ game.team1.icon }}" alt="Team 1 Icon" class="team-icon">
+                            <span class="team-name">{{ game.team1.name }}</span>
+                          </div>
+                          <div class="vs">vs</div>
+                          <div class="team-info">
+                            <img src="{{ game.team2.icon }}" alt="Team 2 Icon" class="team-icon">
+                            <span class="team-name">{{ game.team2.name }}</span>
+                          </div>
+                        </div>
+                        <div class="team-result" *ngIf="game.result !== ''">Resultado: {{ game.result }}</div>
+                      </div>
+                    </div>
+                    <div class="tournament-title" *ngIf="pastGames.length > 0">
+                      <div class="card" *ngFor="let game of pastGames">
+                        <div class="team-container">
+                          <div class="team-info">
+                            <img src="{{ game.team1.icon }}" alt="Team 1 Icon" class="team-icon">
+                            <span class="team-name">{{ game.team1.name }}</span>
+                          </div>
+                          <div class="vs">vs</div>
+                          <div class="team-info">
+                            <img src="{{ game.team2.icon }}" alt="Team 2 Icon" class="team-icon">
+                            <span class="team-name">{{ game.team2.name }}</span>
+                          </div>
+                        </div>
+                        <div class="team-result">{{ game.result }}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -142,5 +336,3 @@
 
 
 
-
-    </body>

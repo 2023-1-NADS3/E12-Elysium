@@ -22,6 +22,104 @@
   ***/
 
 
+
+  h1 {
+    font-size: 24px;
+    color: #00aaff;
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    font-size: 32px;
+    color: #000;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  .button-container {
+    text-align: center;
+  }
+
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #00aaff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+
+  .btn2{
+    display: inline-block;
+    color: #fff;
+    background-color: #181e1e87;
+    border: 2px solid #206b73a6;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+
+
+
+
+
+
+
+.result{
+  color: #fff;
+}
+
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .match-card {
+    background-color: #0000003f;
+    border-radius: 5px;
+    height: 220%;
+    margin-bottom: 20px;
+    overflow: hidden;
+    padding: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 6px rgb(0, 0, 0);
+  }
+
+  .match-card:hover,
+  .match-card:active {
+    background-color: #00b9cd;
+
+  }
+
+  .team-info {
+    display: flex;
+    align-items: center;
+    margin: 0 20px;
+    justify-content: space-around;
+    flex-direction: column-reverse;
+  }
+
+  .team-icon img{
+    width: 5px;
+    height: 5px;
+    margin-right: 10px;
+  }
+
+  .vs {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+
 .container {
     display: flex;
     justify-content: center;
@@ -669,17 +767,17 @@ h2 {
     color: #fff;
 }
 
-.widget .vs-recent-post .recent-post {
+.widget  .recent-post {
     display: flex;
     margin-bottom: 30px;
     align-items: center;
 }
 
-.widget .vs-recent-post .recent-post:last-child {
+.widget  .recent-post:last-child {
     margin-bottom: 0;
 }
 
-.widget .vs-recent-post .recent-post .post-img {
+.widget  .recent-post .post-img {
     width: 100px;
     height: 80px;
     margin-right: 20px;
@@ -850,7 +948,7 @@ h2 {
 ***/
 .featured-games-section {
     position: relative;
-    padding: 60px 0px 60px;
+    padding: 0px;
     background-color: #0d0e1b;
 }
 
@@ -875,11 +973,7 @@ h2 {
     text-align: center;
 }
 
-.content img {
-    width: 70%;
-    height: 40%;
-    margin-bottom: 20px;
-}
+
 
 
 
@@ -1009,6 +1103,7 @@ header {
     overflow: hidden;
     z-index: 0;
 
+
 }
 
 
@@ -1068,197 +1163,6 @@ header .overlay {
     z-index: 1;
 }
 
-
-
-
-
-/* Home Page Upcoming Matches Section Style */
-
-.bi-calendar-week {
-    color: #ffffffc2;
-    padding: 2px;
-    margin-bottom: 3px;
-}
-
-.bi-clock {
-    color: #fff;
-    padding: 2px;
-    margin-bottom: 3px;
-}
-
-/* Home Page Upcoming Matches Section Style */
-.upcoming_matches_section {
-    padding: 135px 0 140px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-color: #0d0e1b;
-    text-align: center;
-}
-
-.upcoming_matches_section h2 {
-    margin-bottom: 20px;
-}
-
-.upcoming_matches_section .mb-5,
-.my-5 {
-    margin-bottom: 45px !important;
-}
-
-.upcoming_matches_section .upcoming_matches_content {
-    background-color: #09090e;
-    border: 2px solid #111114;
-    width: 100%;
-    padding: 38px 0;
-    transition: all 0.3s ease-in-out;
-    margin-bottom: 42px;
-}
-
-.upcoming_matches_section .upcoming_matches_content:hover {
-    border: 2px solid #00b9cd;
-}
-
-.upcoming_matches_section .mb-4,
-.my-4 {
-    margin-bottom: 30px !important;
-}
-
-.upcoming_matches_section .mb-2,
-.my-2 {
-    margin-bottom: 52px !important;
-}
-
-.upcoming_matches_content .first_portion {
-    display: inline-flex;
-    margin-left: 50px;
-}
-
-.vs_wrapper span {
-    font-family: 'Teko', sans-serif;
-    text-align: center;
-    font-weight: 300;
-    font-size: 26px;
-    color: #dddddd;
-}
-
-.upcoming_matches_content .vs_wrapper {
-    margin-top: 15px;
-    border: 1px solid #28282f;
-    border-radius: 100%;
-    background-color: #28282f;
-    line-height: 65px;
-    height: 60px;
-    width: 60px;
-    transition: all 0.3s ease-in-out;
-    margin-right: 28px;
-    margin-left: 20px;
-}
-
-.upcoming_matches_content .center_portion {
-    margin-top: -8px;
-    margin-left: 3px;
-    text-align: left;
-}
-
-.upcoming_matches_content .center_portion p {
-    font-family: 'Teko', sans-serif;
-    font-weight: 400;
-    font-size: 34px;
-    line-height: 65px;
-    color: #fff;
-}
-
-.upcoming_matches_content .center_portion .center_span_wrapper {
-    margin-top: -5px;
-
-}
-
-.upcoming_matches_content .center_portion .center_span_wrapper i {
-    font-size: 16px;
-    line-height: 16px;
-    color: #545460;
-}
-
-.upcoming_matches_content .center_portion .center_span_wrapper .mr-1,
-.mx-1 {
-    margin-right: 10px !important;
-
-}
-
-.upcoming_matches_content .center_portion .center_span_wrapper .mr-3,
-.mx-3 {
-    margin-right: 12px !important;
-    color: #b9b7b7;
-}
-
-.upcoming_matches_content .center_portion .center_span_wrapper span {
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 30px;
-    color: #b9b7b7;
-}
-
-.upcoming_matches_content .last_portion {
-    display: flex;
-    margin-left: 10px;
-    margin-top: 5px;
-}
-
-.upcoming_matches_content .last_portion .last_span_wrapper {
-    background-color: #00b9cd;
-    margin-right: 18px;
-    padding: 8px 32px;
-
-}
-
-.last_span_wrapper span {
-    font-family: 'Teko', sans-serif;
-}
-
-
-
-.upcoming_matches_content .last_portion .last_span_wrapper .players {
-    font-family: 'Teko', sans-serif;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 30px;
-    color: #fff;
-    display: block;
-}
-
-
-
-
-
-
-
-.upcoming_matches_content .last_portion i {
-    color: #fff;
-    margin-top: 26px;
-    font-size: 26px;
-    line-height: 26px;
-}
-
-.upcoming_matches_section .btn_wrapper .viewall_btn {
-    border-radius: 50px;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 20px;
-    padding: 17px 46px;
-    text-align: center;
-    color: #fff;
-    display: inline-block;
-    background-color: #0e0e11;
-    background-color: var(--e-global-color-dark-black);
-    border: 2px solid var(--e-global-color-accent);
-    transition: all 0.3s ease-in-out;
-}
-
-.upcoming_matches_section .btn_wrapper .viewall_btn:hover {
-
-    background-color: #00b9cd;
-    border: 2px solid #00b9cd;
-}
 
 
 
@@ -1352,218 +1256,6 @@ header .overlay {
 
 
 
-
-
-@media screen and (max-width: 767px) {
-
-
-    .upcoming_matches_section {
-        padding: 55px 0 60px;
-    }
-
-    .upcoming_matches_section h2 {
-        margin-bottom: 10px;
-    }
-
-    .upcoming_matches_section .mb-5,
-    .my-5 {
-        margin-bottom: 25px !important;
-    }
-
-    .upcoming_matches_section .mb-2,
-    .my-2 {
-        margin-bottom: 30px !important;
-    }
-
-    .upcoming_matches_section .upcoming_matches_content {
-        padding: 20px 0;
-    }
-
-    .upcoming_matches_content .first_portion {
-        margin-left: 0;
-        margin-bottom: 20px;
-    }
-
-    .upcoming_matches_content .vs_wrapper {
-        margin-top: 20px;
-        line-height: 50px;
-        height: 45px;
-        width: 45px;
-        font-size: 10px;
-        margin-right: 12px;
-        margin-left: 12px;
-    }
-
-    .upcoming_matches_content .center_portion {
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    .upcoming_matches_content .center_portion p {
-        font-size: 26px;
-        line-height: 40px;
-    }
-
-    .upcoming_matches_content .center_portion .center_span_wrapper i {
-        font-size: 14px;
-        line-height: 14px;
-    }
-
-    .upcoming_matches_content .center_portion .center_span_wrapper span {
-        line-height: 10px;
-        font-size: 12px;
-    }
-
-    .upcoming_matches_content .last_portion {
-        display: inline-flex;
-        align-items: center;
-    }
-
-    .upcoming_matches_content .last_portion .last_span_wrapper {
-        margin-right: 12px;
-        padding: 10px 10px;
-    }
-
-
-
-    .upcoming_matches_content .last_portion .last_span_wrapper .players {
-        font-size: 14px;
-        line-height: 10px;
-    }
-
-
-
-
-    .upcoming_matches_content .last_portion i {
-        margin-top: 22px;
-        font-size: 20px;
-        line-height: 20px;
-    }
-
-    .upcoming_matches_section .btn_wrapper .viewall_btn {
-        padding: 10px 30px;
-    }
-
-    .btn_wrapper .joinus_btn {
-        font-size: 14px;
-        line-height: 14px;
-    }
-
-    .upcoming_games_section {
-        padding: 60px 0 130px;
-    }
-
-    .upcoming_games_section h2 {
-        margin-bottom: 8px;
-    }
-
-    .upcoming_games_section .mb-5,
-    .my-5 {
-        margin-bottom: 20px !important;
-    }
-
-    .upcoming_games_section .upcoming_games_span_wrapper span {
-        font-size: 26px;
-        line-height: 30px;
-        bottom: 10px;
-        left: 10px;
-    }
-
-    .upcoming_games_section .upcoming_games_span_wrapper i {
-        font-size: 20px;
-        line-height: 20px;
-        bottom: 15px;
-        right: 18px;
-    }
-
-
-}
-
-@media screen and (max-width: 575px) {
-
-    .btn_wrapper .readmore_btn {
-        font-size: 14px;
-        line-height: 14px;
-    }
-
-    .btn_wrapper .joinus_btn {
-        font-size: 14px;
-        line-height: 14px;
-    }
-
-
-
-    .upcoming_matches_section h2 {
-        margin-bottom: 8px;
-    }
-
-    .upcoming_matches_section .mb-5,
-    .my-5 {
-        margin-bottom: 20px !important;
-    }
-
-    .upcoming_matches_content .vs_wrapper {
-        margin-top: 25px;
-        line-height: 45px;
-        height: 40px;
-        width: 40px;
-        font-size: 10px;
-        margin-right: 10px;
-        margin-left: 10px;
-    }
-
-    .upcoming_matches_content .center_portion p {
-        font-size: 24px;
-        line-height: 28px;
-    }
-
-    .upcoming_matches_content .center_portion .center_span_wrapper i {
-        font-size: 12px;
-        line-height: 12px;
-    }
-
-    .upcoming_matches_content .center_portion .center_span_wrapper span {
-        line-height: 18px;
-    }
-
-    .upcoming_matches_content .last_portion .last_span_wrapper {
-        margin-right: 10px;
-
-    }
-
-
-
-
-    .upcoming_matches_content .last_portion i {
-        margin-top: 25px;
-    }
-
-    .upcoming_matches_section .btn_wrapper .viewall_btn {
-        padding: 10px 28px;
-        font-size: 14px;
-        line-height: 14px;
-    }
-
-
-    .upcoming_games_section {
-        padding: 60px 0 160px;
-    }
-
-    .upcoming_games_section .upcoming_games_span_wrapper span {
-        font-size: 24px;
-        line-height: 28px;
-        bottom: 20px;
-        left: 20px;
-    }
-
-    .upcoming_games_section .upcoming_games_span_wrapper i {
-        font-size: 18px;
-        line-height: 18px;
-        bottom: 25px;
-        right: 25px;
-    }
-
-}
 
 
 
