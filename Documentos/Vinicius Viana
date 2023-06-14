@@ -1,0 +1,15 @@
+02/03 - Ok então nas primeiras semanas foi discução em grupo sobre o tema do grupo e como seria nosso projeto e abamos escolhendo a ideia de criar uma comunidade gamer, depois passei tentanto entender como funcionario o backend e como seria construido e tambem tentando enter como ele funcionaria num geral.
+
+16/03 - comecei a criação do backend do projeto com a criação de um login e cadastro simples so com o angular e node ainda sem banco de dados.
+
+30/03 - aqui tinha começado com a criação de posts e e começado a guardar as informações de postagens e cadastros num banco de dados que esta hospedado no planetscale e tambem continuei com a criação das rotas de postagens e de usuarios agora usando o banco de dados e junto o sequelize.
+
+13/04 - nessa semana foi quando começei com a criação de comentarios e suas rotas na api e tambem quando começei a procurar como juntar os comentarios, posts e usuarios para eles se relacionar.
+
+27/04 - depois falar com o professor vitor mudei o banco que estava hospedado no planetscale para um local com o sqlite que ajudou muito com o projeto, mas tambem tem necessidade de refazer algumas partes do codigo.
+
+11/05 - trabalhei e tive que aprender a usar a junção de tabelas no sequelizer para ligar as tabelas de Usuarios com a de Post e de Comentarios, atraves das tabelas de CreatorPost, CreatorComent e AnswerPost.
+
+25/05 - ainda estava trabalhado nessa parte da ligação das tabelas, essa é a parte mais deu trabalho no projeto, que foi o angular poder receber os dados certos da api e enviar devolta da maneira certar por causa das tabelas ligadas. 
+
+08/06 - Fiz alguns ajustes no codigo e foi adicionado algumas mensagens contra erros que faltavam, como o usuario apertar num botão e uma mensagem aparece falando que ele deve estar logado para realizar a ação e entrega final dos arquivos da parte de codigo do projeto.
